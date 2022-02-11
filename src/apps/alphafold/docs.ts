@@ -1,4 +1,7 @@
-const submitted_at = new Date(Date.now()).toISOString()
+const init_date = Date.now()
+const submitted_at = new Date(init_date).toISOString()
+const started_at = new Date(init_date + 10000).toISOString()
+const completed_at = new Date(init_date + 20000).toISOString()
 
 const docsData = {
   application: {
@@ -44,7 +47,7 @@ const docsData = {
         completed_at: null,
         output: []
       }
-    }
+    },
     '/alphafold/status/:jobId': {
       description: 'get the status of a job',
       url: '/alphafold/status/12345',
@@ -65,8 +68,8 @@ const docsData = {
         accepted: true,
         status: 'completed',
         submitted_at: submitted_at,
-        started_at: submitted_at + 10000,
-        completed_at: submitted_at + 20000,
+        started_at: started_at,
+        completed_at: completed_at,
         output: ["features.pkl", "msas", "ranked_0.pdb", "ranking_debug.json", "relaxed_model_1.pdb", "result_model_1.pkl", "timings.json", "unrelaxed_model_1.pdb"]
       }
     }
