@@ -1,4 +1,4 @@
-name = "ts-worker-rest"
+name = "rest-api"
 type = "javascript"
 zone_id = ""
 account_id = ""

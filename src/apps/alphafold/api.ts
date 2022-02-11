@@ -1,25 +1,6 @@
+import docsData from './docs'
 export const docs = (_req: any, res: any) => {
-  return res.send({
-    application: {
-      name: 'alphafold'
-    },
-    endpoints: {
-      '/alphafold': { description: 'return this documentation' },
-      '/submit': {
-        description: 'submit a new job',
-        method: 'POST',
-        payload_example: {
-          input: [
-            { name: 'abc', sequence: 'MTANHLESPNCDWKNNRMAIVHMVNVTPLRMMEEPRAAVEAAFEGIMEPAVVGDMVEYWNKMISTCCNYYQMGSSRSHLEEKAQMVDRFWFCPCIYYASGKWRNMFLNILHVWGHHHYPRNDLKPCSYLSCKLPDLRIFFNHMQTCCHFVTLLFLTEWPTYMIYNSVDLCPMTIPRRNTCRTMTEVSSWCEPAIPEWWQATVKGGWMSTHTKFCWYPVLDPHHEYAESKMDTYGQCKKGGMVRCYKHKQQVWGNNHNESKAPCDDQPTYLCPPGEVYKGDHISKREAENMTNAWLGEDTHNFMEIMHCTAKMASTHFGSTTIYWAWGGHVRPAATWRVYPMIQEGSHCQC'}
-          ]
-        },
-        response_example: {
-          
-        }
-      }
-    }
-
-  })
+  return res.send(docsData)
 }
 
 export const submit = (_req: any, res: { send: (arg0: { data: string[]; }) => any; }) => {
