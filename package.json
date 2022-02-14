@@ -1,7 +1,7 @@
 {
-  "name": "openlab-application-api-worker",
+  "name": "applayer-rest-api-hub",
   "version": "1.0.0",
-  "description": "Cloudflare worker for LabDAO OpenLab application layer REST APIs",
+  "description": "LabDAO OpenLab application layer REST API hub as a cloudflare worker",
   "main": "dist/worker.js",
   "scripts": {
     "build": "webpack",

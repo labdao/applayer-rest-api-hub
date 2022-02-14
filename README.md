@@ -1,12 +1,20 @@
-# ʕ •́؈•̀) `worker-typescript-template`
+# ʕ •́؈•̀) LabDAO `openlab-application-api-worker`
 
-A batteries included template for kick starting a TypeScript Cloudflare worker project.
+> NOTE: this repo is under very active development
 
-## Note: You must use [wrangler](https://developers.cloudflare.com/workers/cli-wrangler/install-update) 1.17 or newer to use this template.
+A batteries included template for kickstarting a LabDAO OpenLab service provider API as a TypeScript Cloudflare worker project.
+
+## What is this for?
+
+This helps you spin up a service that provides applications in the LabDAO OpenLab ecosystem quickly and cheaply (usually free).
+
+(tbc)
 
 ## 🔋 Getting Started
 
 This template is meant to be used with [Wrangler](https://github.com/cloudflare/wrangler). If you are not already familiar with the tool, we recommend that you install the tool and configure it to work with your [Cloudflare account](https://dash.cloudflare.com). Documentation can be found [here](https://developers.cloudflare.com/workers/tooling/wrangler/).
+
+> Note: You must use [wrangler](https://developers.cloudflare.com/workers/cli-wrangler/install-update) 1.17 or newer to use this template.
 
 To generate using Wrangler, run this command:
 
@@ -17,6 +25,8 @@ wrangler generate my-ts-project https://github.com/cloudflare/worker-typescript-
 ### 👩 💻 Developing
 
 [`src/index.ts`](./src/index.ts) calls the request handler in [`src/handler.ts`](./src/handler.ts), and will return the [request method](https://developer.mozilla.org/en-US/docs/Web/API/Request/method) for the given request.
+
+Applications should each have their own subdirectory under `src/apps`, e.g `src/apps/alphafold`. This defines the endpoints and their handlers.
 
 ### 🧪 Testing
 
