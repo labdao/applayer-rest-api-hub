@@ -1,6 +1,6 @@
 import handleRequest from './handler'
 
-const corsHeaders = {
+const corsHeaders: HeadersInit = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET,HEAD,POST,OPTIONS",
   "Access-Control-Max-Age": "86400",
@@ -22,10 +22,10 @@ function handleOptions(request: Request) {
       ...corsHeaders,
       // Allow all future content Request headers to go back to browser
       // such as Authorization (Bearer) or X-Client-Name-Version
-      "Access-Control-Allow-Headers": request.headers.get("Access-Control-Request-Headers"),
+      "Access-Control-Allow-Headers": request.headers.get("Access-Control-Request-Headers") || "",
     }
     return new Response(null, {
-      headers: respHeaders,
+      headers: new Headers(respHeaders),
     })
   } else {
     // Handle standard OPTIONS request.
@@ -43,7 +43,7 @@ async function corsify(request: Request) {
   if (request.method === "OPTIONS") {
     response = handleOptions(request)
   } else {
-    response = await handleOptions(request)
+    response = await handleRequest(request)
     response = new Response(response.body, response)
     response.headers.set("Access-Control-Allow-Origin", "*")
     response.headers.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
