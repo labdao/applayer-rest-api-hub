@@ -8,7 +8,6 @@ export const submit = (_req: any, res: any) => {
 }
 
 export const status = (req: any, res: any) => {
-  console.log(req)
   const { jobId } = req.params
 
   if (!jobId) {
